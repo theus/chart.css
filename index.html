@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="description" content="A lightweight, simple and responsive CSS chart system. Just CSS.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Theus Falcão">
+  <meta name="keywords" content="chart, charts, css, simple, plugin, responsive, system">
+  <title>chart.css - A Simple CSS Chart System</title>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github-gist.min.css ">
+	<link rel="stylesheet" href="assets/css/chart.min.css">
+
+	<style>
+		pre { padding: 0; margin-top: 2rem; display: inline-block; }
+		pre code { margin: -2rem 0; }
+
+    h3 {
+      color: #929292;
+    }
+
+    header {
+      background-color: #A2BCE0;
+      padding: 15rem 0;
+      font-family: 'Quicksand', sans-serif; 
+    }
+
+    header h1 { 
+      font-size: 5.5rem; 
+    }
+
+    .bar {
+      margin-top: 4rem;
+    }
+
+    .btn-ghost {
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      border-radius: .5rem;
+      border: 1px #85A2CA solid;
+      color: #375B8C;
+      -webkit-transition: all .15s linear;
+         -moz-transition: all .15s linear;
+          -ms-transition: all .15s linear;
+           -o-transition: all .15s linear;
+              transition: all .15s linear;
+    }
+
+    .btn-ghost:hover {
+      text-decoration: none;
+      background-color: #85A2CA;
+      color: #E8E8E8;
+    }
+    h2 .p-symb { display: none; }
+    h2:hover .p-symb { display: inline-block; }
+
+    tr:target td {
+      -webkit-animation: highlight .8s ease-out;
+              animation: highlight .8s ease-out; 
+    }
+
+    @-webkit-keyframes highlight {
+      0% {
+        background-color: #A2BCE0;
+      }
+      100% {
+        background-color: transparent;
+      }
+    } 
+
+    @keyframes highlight {
+      0% {
+        background-color: #A2BCE0;
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+	</style>
+
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1 class="text-center">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      width="50px"
+      height="50px"
+      viewBox="0 0 372.465 372.465" style="enable-background:new 0 0 372.465 372.465;fill: #85A2CA;position: relative;left: .5rem;top: .3rem;"
+      xml:space="preserve">
+        <g>
+          <g>
+            <path d="M101.98,186.441H30.484c-5.523,0-10,4.477-10,10v166.021c0,5.523,4.477,10,10,10h71.496c5.523,0,10-4.477,10-10V196.441
+            C111.98,190.919,107.503,186.441,101.98,186.441z"/>
+            <path d="M221.98,0h-71.496c-5.523,0-10,4.477-10,10v352.465c0,5.521,4.477,10,10,10h71.496c5.523,0,10-4.479,10-10V10
+            C231.98,4.477,227.504,0,221.98,0z"/>
+            <path d="M341.98,115.257h-71.496c-5.523,0-10,4.477-10,10v237.208c0,5.521,4.477,10,10,10h71.496c5.523,0,10-4.479,10-10V125.257
+            C351.98,119.734,347.504,115.257,341.98,115.257z"/>
+          </g>
+        </g>
+      </svg>
+
+      chart.css
+    </h1>    
+    <h4 class="text-center">A Simple CSS Chart System</h4>
+
+    <div class="bar text-center">
+      <a class="btn-ghost" href="#examples">examples</a>
+      <a class="btn-ghost" href="#reference">reference</a>
+      <a class="btn-ghost" href="https://github.com/theus/chart.css/">github</a>
+    </div>
+  </div><!-- /.container -->
+</header>
+
+<main id="how-to-use">
+  <div class="container">
+    
+  <h2>How To Use</h2>
+  <h3>1. Include chart.css file</h3>
+
+<pre>
+<code class="html">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;chart.css&quot;&gt;
+</code>
+</pre>
+
+  <h3>2. Set up HTML</h3>
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart&quot;&gt;&lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code>
+</pre>
+
+<h3>3. Don't has 3rd step :P</h3>
+
+  </div><!-- /.container -->
+</main>
+
+<main id="examples">
+	<div class="container">
+		<h2 id="set-width-in-style">Set Width In Style <a class="p-symb" href="#set-width-in-style">¶</a></h2>
+    <p>
+      For show the percentage in charts, add the value in attribute <code>data-percent</code>
+    </p>
+		<div class="charts">
+      <div class="charts__chart" data-percent="100%" ></div><!-- /.charts__chart -->
+      <div class="charts__chart" data-percent="60%" style="width: 60%"></div><!-- /.charts__chart -->
+      <div class="charts__chart" style="width: 40%"></div><!-- /.charts__chart -->
+      <div class="charts__chart" style="width: 10%"></div><!-- /.charts__chart -->
+		</div><!-- /.charts -->
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart&quot; data-percent=&quot;100%&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart&quot; data-percent=&quot;60%&quot; style=&quot;width: 60%&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart&quot; style=&quot;width: 40%&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart&quot; style=&quot;width: 10%&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+&lt;/div&gt;&lt;!-- /.charts --&gt;
+</code>
+</pre>
+
+    <h2 id="set-width-with-classes">Set Width With Classes <a class="p-symb" href="#set-width-with-classes">¶</a></h2>
+    <p>
+      Setting up the width of chart with the classes doesn't it necessary put the value in <code>data-percent</code> attribute. Just append the attribute without value  
+    </p>
+    <p>
+      Classes range from <code>chart--p0</code> to <code>chart--p100</code>
+    </p>
+		<div class="charts">
+			<div class="charts__chart chart--p100" data-percent></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p70" data-percent></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p40"></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p20"></div><!-- /.charts__chart -->
+		</div><!-- /.charts -->
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart chart--p100&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p70&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p40&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p20&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+&lt;/div&gt;&lt;!-- /.charts --&gt; 
+</code>
+</pre> 
+
+		<h2 id="chart-sizing">Chart Sizing <a class="p-symb" href="#chart-sizing">¶</a></h2>
+    <p>
+      Classes available for sizing: 
+      <code>chart--xs</code>, 
+      <code>chart--sm</code>, 
+      <code>chart--lg</code> and 
+      <code>chart--xl</code>
+    </p>
+		<div class="charts">
+			<div class="charts__chart chart--p100 chart--xs" data-percent></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p80 chart--sm" data-percent></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p60" data-percent></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p40 chart--lg" data-percent></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p20 chart--xl" data-percent></div><!-- /.charts__chart -->
+		</div><!-- /.charts -->
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart chart--p100 chart--xs&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p80 chart--sm&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p60&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p40 chart--lg&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p20 chart--xl&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+&lt;/div&gt;&lt;!-- /.charts --&gt; 
+</code>
+</pre> 
+
+		<h2 id="chart-colors">Chart Colors <a class="p-symb" href="#chart-colors">¶</a></h2>
+
+    <p>
+      Colors available: 
+      <code>chart--default</code>,
+      <code>chart--blue</code>,
+      <code>chart--green</code>,
+      <code>chart--red</code>,
+      <code>chart--yellow</code> and 
+      <code>chart--grey</code>
+    </p>
+
+
+		<div class="charts">
+			<span>chart--default</span>
+      <div class="charts__chart chart--p100 chart--default" data-percent></div><!-- /.charts__chart -->
+			<span>chart--blue</span>
+      <div class="charts__chart chart--p80 chart--blue" data-percent></div><!-- /.charts__chart -->
+			<span>chart--green</span>
+      <div class="charts__chart chart--p60 chart--green" data-percent></div><!-- /.charts__chart -->
+			<span>chart--red</span>
+      <div class="charts__chart chart--p40 chart--red" data-percent></div><!-- /.charts__chart -->
+			<span>chart--yellow</span>
+      <div class="charts__chart chart--p20 chart--yellow" data-percent></div><!-- /.charts__chart -->
+			<span>chart--grey</span>
+      <div class="charts__chart chart--p5 chart--grey" data-percent></div><!-- /.charts__chart -->
+		</div><!-- /.charts -->
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart chart--p100 chart--default&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p80 chart--blue&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p60 chart--green&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p40 chart--red&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p20 chart--yellow&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p5 chart--grey&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+&lt;/div&gt;&lt;!-- /.charts --&gt; 
+</code>
+</pre> 
+
+		<h2 id="chart-with-hover">Chart With Hover <a class="p-symb" href="#chart-with-hover">¶</a></h2>
+    <p>
+      Append the <code>chart--hover</code> in chart
+    </p>
+		<div class="charts">
+			<div class="charts__chart chart--p100 							 chart--hover"></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p80  chart--blue    chart--hover"></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p60  chart--green   chart--hover"></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p40  chart--red     chart--hover"></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p20  chart--yellow  chart--hover"></div><!-- /.charts__chart -->
+			<div class="charts__chart chart--p5   chart--grey    chart--hover"></div><!-- /.charts__chart -->
+		</div><!-- /.charts -->
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart chart--p100                chart--hover&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p80  chart--blue    chart--hover&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p60  chart--green   chart--hover&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p40  chart--red     chart--hover&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p20  chart--yellow  chart--hover&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;div class=&quot;charts__chart chart--p5   chart--grey    chart--hover&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+&lt;/div&gt;&lt;!-- /.charts --&gt; 
+</code>
+</pre> 
+
+		<h2 id="chart-grouped">Chart Grouped <a class="p-symb" href="#chart-grouped">¶</a></h2>
+    <p>
+      Append the class <code>charts--grouped</code> in <code>charts</code> container. After this, hierarchically the charts will be added inside the previous chart, like the example 
+    </p>
+    <p>
+      The chart in top level must be bigger than the inferior level, since that the top level chart is underneath of inferior level chart in page.  <br>
+      The chart in inferior level admits the superior level as your container, therefore never will exceed it
+    </p>
+		<div class="charts charts--grouped">
+			<div class="charts__chart chart--p100 chart--sm" data-percent>
+				<div class="charts__chart chart--p80  chart--blue" data-percent>
+					<div class="charts__chart chart--p60  chart--green" data-percent></div><!-- /.charts__chart -->
+				</div><!-- /.charts__chart -->
+			</div><!-- /.charts__chart -->
+			
+			<div class="charts__chart chart--p70" data-percent>
+				<div class="charts__chart chart--p80  chart--grey" data-percent>
+					<div class="charts__chart chart--p60  chart--yellow" data-percent></div><!-- /.charts__chart -->
+				</div><!-- /.charts__chart -->
+			</div><!-- /.charts__chart -->
+
+		
+    	<div class="charts__chart chart--p50 chart--lg" data-percent>
+				<div class="charts__chart chart--p80  chart--red" data-percent>
+					<div class="charts__chart chart--p60  chart--inverse" data-percent></div><!-- /.charts__chart -->
+				</div><!-- /.charts__chart -->
+			</div><!-- /.charts__chart -->
+
+		</div><!-- /.charts -->
+
+<pre>
+<code class="html">
+&lt;div class=&quot;charts&quot;&gt;
+  &lt;div class=&quot;charts__chart chart--p100 chart--sm&quot;&gt;
+    &lt;div class=&quot;charts__chart chart--p80  chart--blue&quot;&gt;
+      &lt;div class=&quot;charts__chart chart--p60  chart--green&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+    &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  
+  &lt;div class=&quot;charts__chart chart--p70&quot;&gt;
+    &lt;div class=&quot;charts__chart chart--p80  chart--grey&quot;&gt;
+      &lt;div class=&quot;charts__chart chart--p60  chart--yellow&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+    &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p50 chart--lg&quot;&gt;
+    &lt;div class=&quot;charts__chart chart--p80  chart--red&quot;&gt;
+      &lt;div class=&quot;charts__chart chart--p60  chart--inverse&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+    &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+&lt;/div&gt;&lt;!-- /.charts --&gt;
+</code>
+</pre> 
+
+  <h2 id="chart-vertical"><small><span class="label label-danger" style="position:relative;top:-.65rem;">beta</span></small> Chart Vertical <a class="p-symb" href="#chart-vertical">¶</a></h2>
+  <p>
+    Append the class <code>charts--vertical</code> in <code>charts</code> container. The operation is equal to <code>charts</code> normal. The sizing classes, colors classes, <code>chart--hover</code> work normally. The height may be changed by style too, changing it in <mark>style</mark>. 
+  </p>
+
+  <p class="text-warning">
+    For now, <code>charts--vertical</code> don't support <code>charts--grouped</code>.
+  </p>
+
+  <p>
+    In <code>charts--vertical</code> the method to show the percentage it's different from normal <code>charts</code>. In normal <code>charts</code>, append <code>data-percent</code> as attribute. Here, inside of <code>charts__chart</code> inserts <mark>&lt;span class=&quot;<code>charts__percent</code>&quot;&gt;&lt;/span&gt;</mark> like in example. 
+
+    <br>
+
+    If <mark>&lt;span class=&quot;<code>charts__percent</code>&quot;&gt;&lt;/span&gt;</mark> is empty, it assumes the value of class of percentage (<mark>chart--p0-100</mark>). But, this <mark>span</mark> may used like a title. 
+  </p>
+
+
+  <div class="charts charts--vertical">
+    <div class="charts__chart">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p80">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p60">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+
+    <div class="charts__chart chart--p100                chart--hover">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p80  chart--blue    chart--hover">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p60  chart--green   chart--hover">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p40  chart--red     chart--hover">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p20  chart--yellow  chart--hover">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p5   chart--grey    chart--hover">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+
+    <div class="charts__chart chart--p100 chart--xs">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p80 chart--sm">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p60">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p40 chart--lg">
+      <span class="charts__percent"></span>
+    </div><!-- /.charts__chart -->
+    <div class="charts__chart chart--p20 chart--xl">
+      <span class="charts__percent">Title</span>
+    </div><!-- /.charts__chart -->
+
+  </div><!-- /.charts --> 
+
+  <div class="clearfix"></div><!-- /.clearfix -->
+
+  <pre>
+<code class="html">
+&lt;div class=&quot;charts charts--vertical&quot;&gt;
+
+  &lt;div class=&quot;charts__chart&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p80&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p60&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p100                chart--hover&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p80  chart--blue    chart--hover&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p60  chart--green   chart--hover&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p40  chart--red     chart--hover&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p20  chart--yellow  chart--hover&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p5   chart--grey    chart--hover&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+
+  &lt;div class=&quot;charts__chart chart--p100 chart--xs&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p80 chart--sm&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p60&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p40 chart--lg&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+  &lt;div class=&quot;charts__chart chart--p20 chart--xl&quot;&gt;
+    &lt;span class=&quot;charts__percent&quot;&gt;Title&lt;/span&gt;
+  &lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+
+
+&lt;/div&gt;&lt;!-- /.charts --&gt; 
+    </code>
+  </pre>
+
+  <h2 id="reference">Reference <a class="p-symb" href="#reference">¶</a> </h2>
+  <div class="table-responsive">
+  <style>
+    table tr td:nth-child(3n) { text-align: center; }
+  </style>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="20%">Class</th>
+          <th width="16%">Type</th>
+          <th class="text-center" width="15%">Default</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr id="reference:charts">
+          <td><code>.charts</code></td>
+          <td>Container <span class="label label-default">core</span></td>
+          <td>-</td>
+          <td>Container of normal charts (horizonal). <code>.charts</code> assumes the width of outside element (<mark>100%</mark>). You can change the width of <code>.charts</code> container.</td>
+        </tr>
+
+        <tr id="reference:charts--grouped">
+          <td><code>.charts--grouped</code></td>
+          <td>Modifier <span class="label label-primary">container</span></td>
+          <td>No</td>
+          <td>Enable chart grouping. <span class="text-danger"><span class="glyphicon glyphicon-warning-sign"></span> Don't work with <code>.charts--vertical</code></span></td>
+        </tr>
+
+         <tr id="reference:charts--vertical">
+          <td><code>.charts--vertical</code></td>
+          <td>Modifier <span class="label label-primary">container</span></td>
+          <td>No</td>
+          <td>Transform the chart to vertical. <code>.charts--vertical</code> has a predefined height. You can change the height of <code>.charts--vertical</code> container</td>
+        </tr>
+
+        <tr id="reference:charts__chart">
+          <td><code>.charts__chart</code></td>
+          <td>Chart element <span class="label label-default">core</span></td>
+          <td>-</td>
+          <td>Chart element that must stay inside the container element</td>
+        </tr> 
+
+         <tr id="reference:sizes">
+          <td>
+            <code>.chart--xs</code> 
+            <code>.chart--sm</code> 
+            <code>.chart--lg</code>  
+            <code>.chart--xl</code>  
+          </td>
+          <td>Size modifier <span class="label label-info">chart</span></td>
+          <td>-</td>
+          <td>List of sizes available</td>
+        </tr>
+
+        <tr id="reference:colors" >
+          <td>
+            <code>.chart--default</code>
+            <code>.chart--blue</code>
+            <code>.chart--green</code>
+            <code>.chart--red</code>
+            <code>.chart--yellow</code> 
+            <code>.chart--grey</code> 
+          </td>
+          <td>Color modifier <span class="label label-info">chart</span></td>
+          <td><code>.chart--default</code></td>
+          <td>List of colors available</td>
+        </tr>
+
+        <tr id="reference:percents">
+          <td>
+            <code>.chart--p0</code>
+            -
+            <code>.chart--p100</code> 
+          </td>
+          <td>Width modifier <span class="label label-info">chart</span></td>
+          <td><mark>100%</mark></td>
+          <td>The width classes replaces changing by <mark>style=""</mark>. With these classes, adding the attribute <code>data-percent</code>, the percentage appears correctly</td>
+        </tr>
+
+        <tr id="reference:chart--hover">
+          <td>
+            <code>.chart--hover</code>
+          </td>
+          <td>Hover modifier <span class="label label-info">chart </span></td>
+          <td>No</td>
+          <td>Add hover in chart element. Works with classes colors</td>
+        </tr>
+
+        <tr id="reference:data--percent">
+          <td>
+            <code>[data-percent]</code>
+          </td>
+          <td>Percentage attribute <span class="label label-info">chart </span></td>
+          <td>No</td>
+          <td>Attribute for enabling percentage in chart. It gets the value of the class <mark>chart--p0-100</mark>, need not be declared <span class="text-danger"><span class="glyphicon glyphicon-warning-sign"></span> Don't work with <code>.charts--vertical</code> and <code>.charts--grouped</code></span></td>
+        </tr>
+
+        <tr id="reference:charts__percent">
+          <td>
+            <code>&lt;span class=&quot;charts__percent&quot;&gt;</code>
+          </td>
+          <td>Title/Percentage element <span class="label label-info">chart </span></td>
+          <td>No</td>
+          <td>Element for display percentage in <code>.charts--vertical</code>. If <mark>&lt;span class=&quot;<code>charts__percent</code>&quot;&gt;&lt;/span&gt;</mark> is empty, it assumes the value of class of percentage (<mark>chart--p0-100</mark>). But, this <mark>span</mark> may used like a title. <span class="text-warning"><span class="glyphicon glyphicon-warning-sign"></span> Works only with <code>.charts--vertical</code></span></td>
+        </tr>
+
+        <tr id="reference:span">
+          <td>
+            <code>&lt;span&gt;</code>
+          </td>
+          <td>Title element <span class="label label-info">chart </span></td>
+          <td>No</td>
+          <td>Element for display title in chart. Should come before the element <code>.charts__chart</code> <span class="text-danger"><span class="glyphicon glyphicon-warning-sign"></span> Don't work with <code>.charts--vertical</code></span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+	</div><!-- /.container -->
+</main>
+
+<footer>
+  <hr>
+
+  <div class="text-center">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div> 
+
+  <p class="text-center">
+    Made from <img src="http://twemoji.maxcdn.com/16x16/1f494.png" alt="" /> Brazil
+  </p>
+</footer>
+  
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script> 
+	<script>hljs.initHighlightingOnLoad();</script> 
+
+  <script>
+    $(document).ready(function() {
+      var colors = ["chart--default", "chart--blue", "chart--green", "chart--red", "chart--yellow", "chart--grey"];
+      var sizes = ["chart--xs", "chart--sm", "chart--lg", "chart--xl"];
+      var percents = ["chart--p0", "chart--p100"]
+
+      codes = [];
+      $("p code:not(.html)").each(function(index, el){
+        var code, codeRef;
+        codeRef = code = $(this).text();
+
+        if (colors.indexOf(codeRef) != -1) {
+          codeRef = "colors";
+        };
+        if (sizes.indexOf(codeRef) != -1) {
+          codeRef = "sizes";
+        };
+        if (percents.indexOf(codeRef) != -1) {
+          codeRef = "percents";
+        };
+
+        if (code.search("div") == -1) {
+          codes[index] = code; 
+         $(this).before("<a href='#reference:"+codeRef+"'><code>"+code+"</code></a>");
+         $(this).remove();
+        } 
+     });
+
+    });
+  </script>
+
+</body>
+</html>
