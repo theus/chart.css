@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <meta name="description" content="A lightweight, simple and responsive CSS chart system. Just CSS.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Theus Falcão">
@@ -47,6 +48,18 @@
           -ms-transition: all .15s linear;
            -o-transition: all .15s linear;
               transition: all .15s linear;
+    }
+
+    @media (max-width: 768px) {
+       header {
+        padding: 5rem 0;
+       }
+
+      .btn-ghost {
+        display: block;
+        margin-top: 1rem;
+      }
+      
     }
 
     .btn-ghost:hover {
@@ -108,6 +121,10 @@
     </h1>    
     <h4 class="text-center">A Simple CSS Chart System</h4>
 
+    <p class="text-center">
+      <a href="https://github.com/theus/chart.css/archive/v1.0.0.zip">Download</a>
+    </p> 
+
     <div class="bar text-center">
       <a class="btn-ghost" href="#examples">examples</a>
       <a class="btn-ghost" href="#reference">reference</a>
@@ -122,12 +139,23 @@
   <h2>How To Use</h2>
   <h3>1. Include chart.css file</h3>
 
+  <p>
+    You can <a href="https://github.com/theus/chart.css/archive/v1.0.0.zip">download</a> the chart.css or use the CDN powered by RawGit.
+  </p>
+
 <pre>
 <code class="html">
+&lt;!-- Downloaded chart.css --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;chart.css&quot;&gt;
+
+&lt;!-- RawGit CDN chart.css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.rawgit.com/theus/chart.css/v1.0.0/dist/chart.css&quot; /&gt;
 </code>
 </pre>
 
+<p>
+  You can use the file served by RawGit CDN or download and put chart.css file. Note that only needs one way.
+</p>
   <h3>2. Set up HTML</h3>
 
 <pre>
@@ -233,6 +261,10 @@
       <code>chart--grey</code>
     </p>
 
+    <p>
+      For titles, just put an <<code>span</code>> tag before the <code>charts__chart</code>
+    </p>
+
 
 		<div class="charts">
 			<span>chart--default</span>
@@ -252,13 +284,19 @@
 <pre>
 <code class="html">
 &lt;div class=&quot;charts&quot;&gt;
-  &lt;div class=&quot;charts__chart chart--p100 chart--default&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
-  &lt;div class=&quot;charts__chart chart--p80 chart--blue&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
-  &lt;div class=&quot;charts__chart chart--p60 chart--green&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
-  &lt;div class=&quot;charts__chart chart--p40 chart--red&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
-  &lt;div class=&quot;charts__chart chart--p20 chart--yellow&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
-  &lt;div class=&quot;charts__chart chart--p5 chart--grey&quot;&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
-&lt;/div&gt;&lt;!-- /.charts --&gt; 
+  &lt;span&gt;chart--default&lt;/span&gt;
+  &lt;div class=&quot;charts__chart chart--p100 chart--default&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;span&gt;chart--blue&lt;/span&gt;
+  &lt;div class=&quot;charts__chart chart--p80 chart--blue&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;span&gt;chart--green&lt;/span&gt;
+  &lt;div class=&quot;charts__chart chart--p60 chart--green&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;span&gt;chart--red&lt;/span&gt;
+  &lt;div class=&quot;charts__chart chart--p40 chart--red&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;span&gt;chart--yellow&lt;/span&gt;
+  &lt;div class=&quot;charts__chart chart--p20 chart--yellow&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+  &lt;span&gt;chart--grey&lt;/span&gt;
+  &lt;div class=&quot;charts__chart chart--p5 chart--grey&quot; data-percent&gt;&lt;/div&gt;&lt;!-- /.charts__chart --&gt;
+&lt;/div&gt;&lt;!-- /.charts --&gt;
 </code>
 </pre> 
 
