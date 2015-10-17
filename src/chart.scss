@@ -1,0 +1,158 @@
+/*!*
+ * chart.css
+ * @author: Theus Falcão
+ * @description: A Simple CSS Chart System
+ * @version: 1.0.0
+ */
+
+@import "vertical";
+
+$vertical: true;
+
+// colors
+$colors: (
+	default : #7f8c8d,
+	blue    : #2980b9,
+	green   : #27ae60,
+	red     : #c0392b,
+	yellow  : #f1c40f,
+	grey    : #2c3e50,
+	inverse : #ecf0f1
+);
+
+$hover-percent: 5%;
+$font-size-base: 10px;
+
+@mixin percentage {
+  display: block;
+  margin-left: 45%;
+  position: relative;
+  color: lighten(map-get($colors, "default"), 40%);
+  font-size: 1.2em;
+  top: .21em;
+}
+
+// base
+.charts {
+	font-size: $font-size-base;
+
+	span {
+		text-transform: uppercase;
+	}
+}
+
+// vertical
+@if $vertical == true {
+	@include vertical;
+}
+
+// percentage
+.charts__chart[data-percent] {
+	&::after {
+		content: attr(data-percent);
+		@include percentage;
+	}
+}
+
+.charts__chart {
+	background-color: map-get($colors, "default");
+	
+	&.chart--hover { 
+		&:hover {
+			background-color: darken(map-get($colors, "default"), $hover-percent);
+		}
+	}
+
+	width: 100%;
+	height: 2em;
+	margin: .5em 0;
+
+	> .charts__chart { height: 100%; }
+
+}
+
+// sizing
+.chart--xs {
+	height : .5em;
+
+	&[data-percent]::after {
+		top: -.4em;
+		margin-left: calc(100% + .3em);
+		color: darken(map-get($colors, "default"), 10%); 
+	}
+}
+.chart--sm {
+	height : 1em;
+
+	&[data-percent]::after {
+		top: -.25em;
+		margin-left: calc(100% + .3em);
+		color: darken(map-get($colors, "default"), 10%); 
+	}
+}
+.chart--lg {
+	height : 3em;
+
+	&[data-percent]::after {
+		font-size: 1.4em;
+    top: .33em; 
+	}
+
+}
+.chart--xl {
+	height : 4.5em;
+
+	&[data-percent]::after {
+		font-size: 2em;
+    top: .4em; 
+	}
+}
+@if $vertical == true {
+	@include vertical-sizing;
+}
+
+// classes of percentage generator
+@for $i from 0 through 100 {
+	.charts {
+		&:not(.charts--vertical) {
+			.chart--p#{$i} { 
+				width: #{$i}%;
+
+				&[data-percent]::after {
+					content: "#{$i}%"
+				}
+			}
+		}
+
+		@if $vertical == true {
+			&.charts--vertical {
+				.chart--p#{$i} { 
+					height: #{$i}%;
+					.charts__percent:empty::after {
+						content: "#{$i}%";
+					}
+					
+				}
+			}
+		}
+	}
+}
+
+// colors classes generator
+@each $name, $color in $colors {
+	.chart--#{$name} { 
+		background-color: #{$color};
+
+		&.chart--hover {
+			&:hover { 
+				background-color: darken($color, $hover-percent); 
+			}
+		} // .chart--hover
+	} // .chart--
+} //each
+
+.charts--grouped {
+	[data-percent]::after {
+		display: none;
+	}
+}

@@ -1,0 +1,85 @@
+@mixin vertical {
+	.charts--vertical {
+		height: 25rem;
+		display: inline-block;
+
+		.charts__percent {
+			display: table;
+    	position: relative;
+    	top: 50%;
+    	transform: rotate(-90deg);
+    	left: -.5rem;
+    	color: lighten(map-get($colors, "default"), 40%);
+
+    	&:empty::after { 
+    		content: "100%"; 
+    		margin-left: .345rem;
+    		font-size: 1.1rem;
+    	}
+		}
+
+		.charts__chart {
+			width: 2rem;
+			height: 100%;
+		  display: inline-block;  
+		  margin: 0 .2rem;
+
+		  > .charts__chart { width: 100%; }
+		}
+
+		// error on .charts--grouped 
+		&.charts--grouped {
+			&::after {
+				content: "Oops! Seems that you used 'charts--grouped' in 'charts--vertical'. This isn't supported.";
+				font-size: 2rem;
+				color: #D0716F;
+
+			}
+			.charts__chart { display: none; }
+		}
+		// end error
+
+	}
+}
+
+@mixin vertical-sizing {
+	.charts--vertical {
+		.chart--xs { 
+			width: .5em;
+			margin-left: 1.5rem;
+
+			.charts__percent {
+				 left: -2.2rem;
+				 color: #333333;
+			}
+
+		}
+		.chart--sm { 
+			width: 1em;
+			margin-left: 1.4rem;
+
+
+			.charts__percent {
+				 left: -2.2rem;
+				 color: #333333;
+			}
+
+		}
+		.chart--lg { 
+			width: 3em;
+
+			.charts__percent {
+				 left: 0;
+			}
+
+		}
+		.chart--xl { 
+			width: 4.5em;
+
+			.charts__percent {
+				 left: 0.75em;
+			}
+
+		}
+	}
+}
