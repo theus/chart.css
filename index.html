@@ -12,7 +12,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="chart.css - A Simple CSS Chart System">
   <meta name="twitter:description" content="A lightweight, simple and responsive CSS chart system. Just CSS.">
-  <meta name="twitter:image:src" content="http://theus.github.io/chart.css/cover-tw.png">
+  <meta name="twitter:image:src" content="http://theus.github.io/chart.css/cover-tw.jpg">
 
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -98,6 +98,11 @@
         background-color: transparent;
       }
     }
+
+    .git-btns {
+    	margin-bottom: -1rem;
+    	margin-top: 2rem; 
+    }
 	</style>
 
 </head>
@@ -127,8 +132,12 @@
     </h1>    
     <h4 class="text-center">A Simple CSS Chart System</h4>
 
-    <p class="text-center">
-      <a href="https://github.com/theus/chart.css/archive/v1.0.0.zip">Download</a>
+    <p class="text-center git-btns">
+			<a class="github-button" href="https://github.com/theus/chart.css/archive/master.zip" data-icon="octicon-cloud-download" aria-label="Download theus/chart.css on GitHub">Download</a>
+
+			<a class="github-button" href="https://github.com/theus/chart.css" data-icon="octicon-star" data-count-href="/theus/chart.css/stargazers" data-count-api="/repos/theus/chart.css#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star theus/chart.css on GitHub">Star</a>
+
+			<a class="github-button" href="https://github.com/theus/chart.css/fork" data-icon="octicon-repo-forked" data-count-href="/theus/chart.css/network" data-count-api="/repos/theus/chart.css#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork theus/chart.css on GitHub">Fork</a> 
     </p> 
 
     <div class="bar text-center">
@@ -146,7 +155,7 @@
   <h3>1. Include chart.css file</h3>
 
   <p>
-    You can <a href="https://github.com/theus/chart.css/archive/v1.0.0.zip">download</a> the chart.css or use the CDN powered by RawGit.
+    You can <a href="https://github.com/theus/chart.css/archive/master.zip">download</a> the chart.css or use the CDN powered by RawGit.
   </p>
 
 <pre>
@@ -669,6 +678,8 @@
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script> 
 	<script>hljs.initHighlightingOnLoad();</script> 
+	
+	<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
   <script>
     $(document).ready(function() {
